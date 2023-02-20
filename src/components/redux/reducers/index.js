@@ -1,18 +1,22 @@
+import { ADD_JOB, REMOVE_JOB } from "../action";
+
 const initialState = {
-  container: {
-    jobOfferts: [],
-  },
+  jobOfferts: [],
 };
 
 const mainReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD-JOB":
+    case ADD_JOB:
       return {
         ...state,
-        container: {
-          ...state.container,
-          jobOfferts: [...state.container.jobOfferts, action.payload],
-        },
+
+        jobOfferts: [...state.jobOfferts, action.payload],
+      };
+    case REMOVE_JOB:
+      return {
+        ...state,
+
+        jobOfferts: state.jobOfferts.filter((_, i) => i !== action.payload),
       };
     default:
       return state;

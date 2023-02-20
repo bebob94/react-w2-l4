@@ -1,6 +1,7 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { ADD_JOB } from "./redux/action";
 
 const Job = ({ data }) => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const Job = ({ data }) => {
         <Button
           className="mx-2  bg-light"
           onClick={() => {
-            dispatch({ type: "ADD-JOB", payload: data });
+            dispatch({ type: ADD_JOB, payload: data });
           }}
         >
           ❤

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
+import CartIndicator from "./cartIndicator";
 import Job from "./Job";
 
 const MainSearch = () => {
@@ -47,7 +48,7 @@ const MainSearch = () => {
           </Form>
         </Col>
 
-        <Button className="my-2  bg-light">👉</Button>
+        <CartIndicator />
 
         <Col xs={10} className="mx-auto mb-5">
           {jobs.map((jobData) => (
